@@ -1,0 +1,50 @@
+{
+	"labels": {
+		"options": {
+			"gamepad-switch-icon-theme": {
+				"name": "Switch Theme",
+				"description": "The theme to use for the \"Switch\" Gamepad Icons.",
+				"group": [
+					"Default",
+					"SFC",
+					"SNES"
+				]
+			},
+			"gamepad-swap-bumpers": {
+				"name": "Swap L/R",
+				"description": "Swaps the actions of L and R (does not apply to menus)."
+			},
+			"gamepad-swap-triggers": {
+				"name": "Swap LT/RT",
+				"description": "Swaps the actions of LT and RT (does not apply to menus)."
+			},
+			"gamepad-swap-ab": {
+				"name": "Swap A/B",
+				"description": "Swaps the actions of A and B."
+			},
+			"gamepad-swap-xy": {
+				"name": "Swap X/Y",
+				"description": "Swaps the actions of X and Y."
+			},
+			"gamepad-icons":{
+				"group":[
+	               "Xbox",
+	               "Dualshock",
+	               "Switch"
+            	]
+			},
+			"gamepad-attack": {
+				"group": [
+					"\\i[gamepad-jj] \/ \\i[gamepad-kk]",
+               		"\\i[gamepad-kk] \/ \\i[gamepad-jj]"
+				]
+			},
+			"gamepad-dash": {
+				"group":[
+					"\\i[gamepad-hh] \/ \\i[gamepad-ii]",
+					"\\i[gamepad-ii] \/ \\i[gamepad-hh]"
+            	]
+			}
+		}
+	}
+}
