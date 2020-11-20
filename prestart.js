@@ -99,18 +99,18 @@ sc.KeyBinder.inject({
 
         // Swap left and right bumpers if necessary (without changing keycodes, so the menu still scrolls left and right properly)
         if(sc.options.get("gamepad-swap-bumpers")) {
-            throwBtn = throwBtn.replaceAll("-r1", "-l1")
-            specialBtn = specialBtn.replaceAll("-r1", "-l1")
-            dashBtn = dashBtn.replaceAll("-l1", "-r1")
-            quickBtn = quickBtn.replaceAll("-l1", "-r1")
+            throwBtn = throwBtn.replace("-r1", "-l1")
+            specialBtn = specialBtn.replace("-r1", "-l1")
+            dashBtn = dashBtn.replace("-l1", "-r1")
+            quickBtn = quickBtn.replace("-l1", "-r1")
         }
 
         // Swap left and right triggers if necessary (without changing keycodes)
         if(sc.options.get("gamepad-swap-triggers")) {
-            throwBtn = throwBtn.replaceAll("-r2", "-l2")
-            specialBtn = specialBtn.replaceAll("-r2", "-l2")
-            dashBtn = dashBtn.replaceAll("-l2", "-r2")
-            quickBtn = quickBtn.replaceAll("-l2", "-r2")
+            throwBtn = throwBtn.replace("-r2", "-l2")
+            specialBtn = specialBtn.replace("-r2", "-l2")
+            dashBtn = dashBtn.replace("-l2", "-r2")
+            quickBtn = quickBtn.replace("-l2", "-r2")
         }
 
         // The guard button is the same as the dash button, set it after all the above has been handled
