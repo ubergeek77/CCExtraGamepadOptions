@@ -6,7 +6,8 @@ sc.GAMEPAD_ICON_STYLE.SWITCH = Object.keys(sc.GAMEPAD_ICON_STYLE).length;
 sc.GAMEPAD_SWITCH_STYLE = {
     DEFAULT: 0,
     SFC: 1,
-    SNES: 2
+    SNES: 2,
+    PRO2: 3
 };
 
 // Register the Switch icon theme option
@@ -250,7 +251,32 @@ sc.FontSystem.inject({
     },
     getSwitchOffsets: function() {
         // Return different offsets for the Switch Gamepad icons depending on the theme the user has chosen.
-        if(sc.options.get("gamepad-switch-icon-theme") == 2) {
+        if(sc.options.get("gamepad-switch-icon-theme") == 3) {
+            return {
+                "left-stick":[2, 111],
+                "right-stick":[2, 112],
+                "gamepad-l1":[2, 113],
+                "gamepad-r1":[2, 114],
+                "gamepad-l2":[2, 115],
+                "gamepad-r2":[2, 116],
+                "gamepad-select":[2, 117],
+                "gamepad-pause":[2, 118],
+                "gamepad-left":[2, 119],
+                "gamepad-down":[2, 120],
+                "gamepad-right":[2, 121],
+                "gamepad-up":[2, 122],
+                "gamepad-a":[2, 123],
+                "gamepad-b":[2, 124],
+                "gamepad-x":[2, 125],
+                "gamepad-y":[2, 126],
+                "left-stick-left":[2, 127],
+                "left-stick-right":[2, 128],
+                "left-stick-press":[2, 129],
+                "right-stick-press":[2, 130],
+                "gamepad-l1-off":[2, 131],
+                "gamepad-r1-off":[2, 132]
+            };
+        } else if(sc.options.get("gamepad-switch-icon-theme") == 2) {
             return {
                 "left-stick":[2, 89],
                 "right-stick":[2, 90],

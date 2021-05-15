@@ -1,7 +1,7 @@
 {
 	"name": "Extra Gamepad Options",
-	"version": "1.0.0",
-	"description": "Adds a Nintendo Switch icon theme (with 3 color schemes), and allows for the swapping of A/B, X/Y, L/R, and LT/RT.",
+	"version": "1.0.2",
+	"description": "Allows buttons/triggers to be swapped, and adds extra icon themes.",
 	"module": false,
 	"prestart": "prestart.js",
 	"ccmodDependencies": {

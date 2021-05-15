@@ -7,7 +7,8 @@
 				"group": [
 					"Default",
 					"SFC",
-					"SNES"
+					"SNES",
+					"Pro2"
 				]
 			},
 			"gamepad-swap-bumpers": {
