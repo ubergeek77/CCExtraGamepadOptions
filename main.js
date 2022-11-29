@@ -1,3 +1,7 @@
+// Replace the "Gamepad Icons" option with a non-conflicting internal name
+sc.OPTIONS_DEFINITION["ccgp-gamepad-icons"] = sc.OPTIONS_DEFINITION["gamepad-icons"]
+delete sc.OPTIONS_DEFINITION["gamepad-icons"]
+
 // Register the Switch layout as a new option
 sc.GAMEPAD_ICON_OPTION.SWITCH = Object.keys(sc.GAMEPAD_ICON_OPTION).length;
 sc.GAMEPAD_ICON_STYLE.SWITCH = Object.keys(sc.GAMEPAD_ICON_STYLE).length;
@@ -50,6 +54,14 @@ sc.OPTIONS_DEFINITION["gamepad-swap-xy"] = {
     cat: sc.OPTION_CATEGORY.GAMEPAD,
     gamepadIconUpdate: true
 };
+
+// Initialize mod variables to 0 if they are undefined
+for (name of ["gamepad-attack", "gamepad-dash", "ccgp-gamepad-icons", "gamepad-swap-ab", "gamepad-swap-bumpers", "gamepad-swap-triggers", "gamepad-swap-xy", "gamepad-switch-icon-theme"]) {
+    let opt = sc.options.get(name);
+    if (isNaN(opt)) {
+        sc.options.set(name, 0)
+    }
+}
 
 // Modify KeyBinder to support swapped buttons
 sc.KeyBinder.inject({
@@ -150,7 +162,7 @@ sc.KeyBinder.inject({
     updateGamepadIcons: function() {
         // Most of the logic that was in this function was moved to generateActionMap()
         // This now passes the new action map to changeGamepadIcon
-        sc.fontsystem.setGamepadIconStyle(sc.options.get("gamepad-icons"));
+        sc.fontsystem.setGamepadIconStyle(sc.options.get("ccgp-gamepad-icons"));
         sc.fontsystem.changeGamepadIcon(this.generateActionMap());
     }
 });
@@ -438,6 +450,9 @@ sc.FontSystem.inject({
         var useGamepadIcons = ig.input.currentDevice == ig.INPUT_DEVICES.GAMEPAD;
         this.gamepadIcons = useGamepadIcons;
         if(this.gamepadIcons) {
+            // We aren't using the gamepad-icons variable anymore, so the gamepad icons will no longer be initialized automatically
+            // When the gamepad theme needs to be updated, call updateGamepadIcons first to avoid out-of-index errors
+            sc.options.keyBinder.updateGamepadIcons();
             this.font.setMapping(this.generateOffsetMap(actionMap));
         } else {
             this.font.setMapping(this.getKeyboardOffsets());

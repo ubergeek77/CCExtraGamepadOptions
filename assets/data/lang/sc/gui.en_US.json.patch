@@ -27,7 +27,9 @@
 				"name": "Swap X/Y",
 				"description": "Swaps the actions of X and Y."
 			},
-			"gamepad-icons":{
+			"ccgp-gamepad-icons":{
+				"name": "Gamepad Icons",
+				"description": "Icons displayed for Gamepad Buttons.",
 				"group":[
 	               "Xbox",
 	               "Dualshock",

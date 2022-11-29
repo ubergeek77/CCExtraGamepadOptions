@@ -1,9 +1,9 @@
 {
 	"name": "Extra Gamepad Options",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Allows buttons/triggers to be swapped, and adds extra icon themes.",
 	"module": false,
-	"prestart": "prestart.js",
+	"main": "main.js",
 	"ccmodDependencies": {
 	}
 }
