@@ -1,0 +1,10 @@
+{
+	"id": "Extra Gamepad Options",
+	"version": "1.0.2",
+	"title": "Extra Gamepad Options",
+	"description": "Allows buttons/triggers to be swapped, and adds extra icon themes.",
+    "repository": "https://github.com/ubergeek77/CCExtraGamepadOptions",
+    "tags": ["QoL"],
+    "authors": "ubergeek77",
+	"prestart": "prestart.js"
+}
